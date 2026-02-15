@@ -3,16 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+
   <title>VERMI.cz – Živá půda, žížalí kompost a ekologické hnojivo</title>
   <meta name="description" content="VERMI.cz – Vermikompostéry, žížalí kompost (vermicompost), bio výluh a návody. Ekologické řešení pro domácnosti, školy i firmy." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://www.vermi.cz/" />
   <meta name="theme-color" content="#2e7d32" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="VERMI.cz – Živá půda, žížalí kompost a ekologické hnojivo" />
   <meta property="og:description" content="Vermikompostéry, vermikompost, výluh a návody. Ekologicky, jednoduše a s láskou k půdě." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.vermi.cz" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" content="https://www.vermi.cz/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VERMI.cz – Živá půda, žížalí kompost a ekologické hnojivo" />
+  <meta name="twitter:description" content="Vermikompostéry, vermikompost, výluh a návody. Ekologicky, jednoduše a s láskou k půdě." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?auto=format&fit=crop&w=1200&q=80" />
 
   <!-- Fonts (CZ diakritika) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,9 +70,22 @@
 
   <style>
     html { scroll-behavior: smooth; }
+    .nav-link{ color:#334155; font-weight:500; }
+    .nav-link:hover{ text-decoration: underline; text-underline-offset: 4px; }
+    .mobile-link{ display:block; padding:.65rem .75rem; border-radius:.75rem; border:1px solid rgb(226 232 240); }
+    .mobile-link:hover{ background: rgba(15, 23, 42, .03); }
+    .mobile-cta{ display:block; padding:.75rem .85rem; border-radius:.75rem; background:#27682b; color:white; font-weight:600; }
+    .mobile-cta:hover{ background:#1f5223; }
+    :focus-visible{ outline: 3px solid rgba(46,125,50,.35); outline-offset: 2px; }
+    .skip-link{ position:absolute; left:-9999px; top:0; background:#fff; border:1px solid #e2e8f0; padding:.6rem .8rem; border-radius:.75rem; z-index:9999; }
+    .skip-link:focus{ left:1rem; top:1rem; }
   </style>
 </head>
 <body class="font-sans text-slate-900 bg-gradient-to-b from-white to-slate-50">
+
+  <!-- Skip to content (A11y) -->
+  <a class="skip-link" href="#main">Přeskočit na obsah</a>
+
   <!-- Top Bar / Nav -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,11 +102,12 @@
           <a href="#produkty" class="nav-link">Produkty</a>
           <a href="#jak-to-funguje" class="nav-link">Jak to funguje</a>
           <a href="#farma" class="nav-link">Naše farma</a>
+          <a href="#pro-koho" class="nav-link">Pro koho</a>
           <a href="#blog" class="nav-link">Magazín</a>
           <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 font-medium hover:bg-vermi-700 focus:outline-none focus:ring-2 focus:ring-vermi-400">Kontakt</a>
         </nav>
 
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-300" aria-label="Otevřít menu" aria-expanded="false">
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-300" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
       </div>
@@ -97,274 +119,342 @@
         <a href="#produkty" class="mobile-link">Produkty</a>
         <a href="#jak-to-funguje" class="mobile-link">Jak to funguje</a>
         <a href="#farma" class="mobile-link">Naše farma</a>
+        <a href="#pro-koho" class="mobile-link">Pro koho</a>
         <a href="#blog" class="mobile-link">Magazín</a>
         <a href="#kontakt" class="mobile-cta">Kontakt</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10 opacity-25" aria-hidden="true" style="background-image: radial-gradient(600px 200px at 10% 10%, #b3dbb7 0, transparent 70%), radial-gradient(600px 200px at 90% 0%, #d7ecd9 0, transparent 70%);"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight text-vermi-700">
-          Žížalí kompost a výluh pro <span class="text-vermi-500">živou půdu</span>
-        </h1>
-        <p class="mt-4 text-lg text-slate-600 max-w-prose">Přirozeně přeměňujeme bioodpad na špičkové organické hnojivo. Domů, do škol i firem. Jednoduše, bez zápachu a s úctou k planetě.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#produkty" class="inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700 focus:outline-none focus:ring-2 focus:ring-vermi-400"><span>Prohlédnout produkty</span></a>
-          <a href="#jak-to-funguje" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-medium hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-slate-300">Jak to funguje</a>
-        </div>
-        <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> 100% přírodní</div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> Bez zápachu</div>
-          <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> Made in CZ</div>
-        </div>
-      </div>
-      <div class="relative">
-        <img src="https://images.unsplash.com/photo-1545241047-6083a8d6e9a6?q=80&w=1200&auto=format&fit=crop" alt="Vermikompost – detail živé půdy" class="rounded-2xl shadow-soft" loading="lazy" />
-        <div class="absolute -bottom-5 -left-5 bg-white rounded-xl border border-slate-200 p-4 shadow-soft w-64">
-          <div class="text-sm text-slate-500">Naměřeno v terénu</div>
-          <div class="mt-1 font-bold text-slate-800">+36% obsahu humusu</div>
-          <div class="text-xs text-slate-500">vs. běžný kompost (orientační)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Produkty -->
-  <section id="produkty" class="py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-4">
-        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Produkty VERMI</h2>
-        <a href="#kontakt" class="text-vermi-700 hover:underline">Chci poptávku →</a>
-      </div>
-
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
-          <img src="https://images.unsplash.com/photo-1621269289535-2bd3695df291?q=80&w=1200&auto=format&fit=crop" alt="Vermikompost – prosátý substrát" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
-          <h3 class="mt-4 text-lg font-bold">Vermikompost (prosátý)</h3>
-          <p class="text-sm text-slate-600 mt-1">Prémiový žížalí kompost. Zvyšuje biologickou aktivitu půdy a dostupnost živin.</p>
-          <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
-            <div><dt class="text-slate-500">Balení</dt><dd class="font-medium">5 / 15 / 25 kg</dd></div>
-            <div><dt class="text-slate-500">Původ</dt><dd class="font-medium">CZ farma</dd></div>
-          </dl>
-          <div class="mt-auto pt-4 flex items-center justify-between">
-            <div class="text-soil-600 font-bold">od 149 Kč</div>
-            <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
-          <img src="https://images.unsplash.com/photo-1615485737651-6fcf3b3457cf?q=80&w=1200&auto=format&fit=crop" alt="Vermikompostér – domácí kompostování" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
-          <h3 class="mt-4 text-lg font-bold">Vermikompostér (set)</h3>
-          <p class="text-sm text-slate-600 mt-1">Domácí bez-zápachové kompostování s kompletním startem (box + žížaly + návod).</p>
-          <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
-            <div><dt class="text-slate-500">Objem</dt><dd class="font-medium">40 / 60 l</dd></div>
-            <div><dt class="text-slate-500">Záruka</dt><dd class="font-medium">24 měsíců</dd></div>
-          </dl>
-          <div class="mt-auto pt-4 flex items-center justify-between">
-            <div class="text-soil-600 font-bold">od 1 990 Kč</div>
-            <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
-          <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200&auto=format&fit=crop" alt="Vermivýluh – tekuté hnojivo" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
-          <h3 class="mt-4 text-lg font-bold">Vermivýluh (tekuté hnojivo)</h3>
-          <p class="text-sm text-slate-600 mt-1">Koncentrovaný výluh z vermikompostu. Pro pokojovky, zahrady i skleníky.</p>
-          <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
-            <div><dt class="text-slate-500">Ředění</dt><dd class="font-medium">1 : 10 – 1 : 20</dd></div>
-            <div><dt class="text-slate-500">Stabilita</dt><dd class="font-medium">chladem 3–6 měs.</dd></div>
-          </dl>
-          <div class="mt-auto pt-4 flex items-center justify-between">
-            <div class="text-soil-600 font-bold">od 119 Kč / 0,5 l</div>
-            <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jak to funguje -->
-  <section id="jak-to-funguje" class="py-16 sm:py-20 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Jak to funguje</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-vermi-600 font-bold">1</div>
-          <h3 class="mt-1 font-bold">Bioodpad → box</h3>
-          <p class="text-sm text-slate-600 mt-1">Zbytky ovoce, zeleniny, kávová sedlina, papírové utěrky. Bez masa a mléka.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-vermi-600 font-bold">2</div>
-          <h3 class="mt-1 font-bold">Žížaly pracují</h3>
-          <p class="text-sm text-slate-600 mt-1">Kalifornské žížaly materiál rozloží na bohatý vermikompost a výluh.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-vermi-600 font-bold">3</div>
-          <h3 class="mt-1 font-bold">Hnojivo pro rostliny</h3>
-          <p class="text-sm text-slate-600 mt-1">Přidejte do substrátu nebo zalijte ředěným výluhem – rostliny viditelně ožijí.</p>
-        </div>
-      </div>
-      <div class="mt-6 text-sm text-slate-600">Tip: Správně provozovaný vermikompostér <strong>nezapáchá</strong> a zabere minimum místa.</div>
-    </div>
-  </section>
-
-  <!-- Farma -->
-  <section id="farma" class="py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10 opacity-25" aria-hidden="true" style="background-image: radial-gradient(600px 200px at 10% 10%, #b3dbb7 0, transparent 70%), radial-gradient(600px 200px at 90% 0%, #d7ecd9 0, transparent 70%);"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Naše vermifarma</h2>
-          <p class="mt-3 text-slate-600">Chováme vlastní populaci kalifornských žížal a dbáme na čistotu vstupních surovin. Každá šarže prochází kontrolou kvality a proséváním.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Lokální suroviny, nulové plýtvání.</li>
-            <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Stálá vlhkost, optimální teplota, řízené podmínky.</li>
-            <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Balíme do recyklovatelných obalů.</li>
-          </ul>
-          <a href="#kontakt" class="mt-6 inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700">Domluvit odběr</a>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <img src="https://images.unsplash.com/photo-1598425237652-4d9bc8e1375f?q=80&w=1200&auto=format&fit=crop" alt="Žížalí farma – detail" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1485637701897-1c03a7529d17?q=80&w=1200&auto=format&fit=crop" alt="Prosévání vermikompostu" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?q=80&w=1200&auto=format&fit=crop" alt="Bohatá, kyprá půda" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1621269289535-2bd3695df291?q=80&w=1200&auto=format&fit=crop" alt="Domácí vermikompostér" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Magazín / Blog -->
-  <section id="blog" class="py-16 sm:py-20 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-4">
-        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Magazín VERMI</h2>
-        <a href="#" class="text-vermi-700 hover:underline">Všechny články →</a>
-      </div>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
-          <img src="https://images.unsplash.com/photo-1595254175031-3b28418a3b01?q=80&w=1200&auto=format&fit=crop" alt="Jak založit vermikompostér" class="aspect-[16/9] object-cover" loading="lazy">
-          <div class="p-5">
-            <h3 class="font-bold">Jak založit vermikompostér za víkend</h3>
-            <p class="text-sm text-slate-600 mt-1">Krok za krokem: od volby boxu po první sklizeň vermikompostu.</p>
-            <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-vermi-700 bg-vermi-50 border border-vermi-100 rounded-full px-3 py-1">
+            <span class="h-2 w-2 rounded-full bg-vermi-500"></span>
+            Vermikompost • Vermivýluh • Vermikompostéry
+          </p>
+          <h1 class="mt-4 text-3xl sm:text-5xl font-black leading-tight tracking-tight text-vermi-700">
+            Žížalí kompost a výluh pro <span class="text-vermi-500">živou půdu</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-prose">Přirozeně přeměňujeme bioodpad na špičkové organické hnojivo. Domů, do škol i firem. Jednoduše, bez zápachu a s úctou k planetě.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#produkty" class="inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700 focus:outline-none focus:ring-2 focus:ring-vermi-400"><span>Prohlédnout produkty</span></a>
+            <a href="#jak-to-funguje" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-medium hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-slate-300">Jak to funguje</a>
           </div>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
-          <img src="https://images.unsplash.com/photo-1472148083604-64f1084980b8?q=80&w=1200&auto=format&fit=crop" alt="Vermivýluh" class="aspect-[16/9] object-cover" loading="lazy">
-          <div class="p-5">
-            <h3 class="font-bold">Vermivýluh: kdy a jak ředit</h3>
-            <p class="text-sm text-slate-600 mt-1">Dávkování pro pokojovky, bylinky i ovocné keře – bez rizika spálení.</p>
-            <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
-          </div>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
-          <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200&auto=format&fit=crop" alt="Půdní život" class="aspect-[16/9] object-cover" loading="lazy">
-          <div class="p-5">
-            <h3 class="font-bold">Živá půda: proč je humus základ</h3>
-            <p class="text-sm text-slate-600 mt-1">Co dělá půdu zdravou a jak jí pomoci bez chemie.</p>
-            <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Časté dotazy</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <details class="rounded-xl border border-slate-200 bg-white p-5">
-          <summary class="font-semibold cursor-pointer">Zápach a mušky – jak tomu předejít?</summary>
-          <p class="mt-3 text-sm text-slate-600">Správně vyvážený poměr vlhkosti a uhlíkatého materiálu (např. karton) eliminuje zápach i mušky. Zakrývejte vrstvou papíru.</p>
-        </details>
-        <details class="rounded-xl border border-slate-200 bg-white p-5">
-          <summary class="font-semibold cursor-pointer">Co do vermikompostéru nepatří?</summary>
-          <p class="mt-3 text-sm text-slate-600">Maso, mléčné výrobky, oleje, citrusy ve velkém množství a cokoliv plesnivého.</p>
-        </details>
-        <details class="rounded-xl border border-slate-200 bg-white p-5">
-          <summary class="font-semibold cursor-pointer">Jak dlouho trvá první sklizeň?</summary>
-          <p class="mt-3 text-sm text-slate-600">Obvykle 8–12 týdnů podle teploty a množství vstupního materiálu.</p>
-        </details>
-        <details class="rounded-xl border border-slate-200 bg-white p-5">
-          <summary class="font-semibold cursor-pointer">Je vermikompost vhodný pro všechny rostliny?</summary>
-          <p class="mt-3 text-sm text-slate-600">Ano, ale u kyselomilných rostlin dávkujte s citem. Výluh vždy řeďte.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontakt -->
-  <section id="kontakt" class="py-16 sm:py-20 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Kontakt & poptávka</h2>
-          <p class="mt-3 text-slate-600">Napište nám, co potřebujete – ozveme se s dostupností a cenou. Možný je i pravidelný odběr pro zahradnictví a obce.</p>
-
-          <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
-            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
-              <div class="font-semibold">E-mail</div>
-              <a href="mailto:info@vermi.cz" class="text-vermi-700">info@vermi.cz</a>
-            </div>
-            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
-              <div class="font-semibold">Telefon</div>
-              <a href="tel:+420000000000" class="text-vermi-700">+420 000 000 000</a>
-            </div>
-            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
-              <div class="font-semibold">Odběrné místo</div>
-              <div class="text-slate-700">Uherské Hradiště / Zlínský kraj</div>
-            </div>
-            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
-              <div class="font-semibold">IČ / Fakturace</div>
-              <div class="text-slate-700">Na vyžádání</div>
-            </div>
+          <div class="mt-6 flex flex-wrap items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> 100% přírodní</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> Bez zápachu</div>
+            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-vermi-500"></span> Made in CZ</div>
           </div>
         </div>
+        <div class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1545241047-6083a8d6e9a6?auto=format&fit=crop&w=1400&q=80"
+            alt="Vermikompost – detail živé půdy"
+            class="rounded-2xl shadow-soft"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="absolute -bottom-5 -left-5 bg-white rounded-xl border border-slate-200 p-4 shadow-soft w-72">
+            <div class="text-sm text-slate-500">Poznámka (orientačně)</div>
+            <div class="mt-1 font-bold text-slate-800">Vermikompost zvyšuje aktivitu půdy</div>
+            <div class="text-xs text-slate-500">Konkrétní výsledky záleží na půdě, plodině a dávkování.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <form class="rounded-2xl border border-slate-200 p-6 bg-white shadow-soft" onsubmit="event.preventDefault(); alert('Díky! Brzy se ozveme.');">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label for="name" class="block text-sm font-medium">Jméno</label>
-              <input id="name" name="name" type="text" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" required />
+    <!-- Trust / Why -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="text-vermi-700 font-black">Čisté vstupy</div>
+            <p class="mt-2 text-sm text-slate-600">Hlídáme suroviny a proces – ať do půdy nedáváte zbytečnou chemii ani nežádoucí příměsi.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="text-vermi-700 font-black">Stálá kvalita</div>
+            <p class="mt-2 text-sm text-slate-600">Každá šarže prochází kontrolou a proséváním. Díky tomu je vermikompost konzistentní a použitelný.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="text-vermi-700 font-black">Lokálně & udržitelně</div>
+            <p class="mt-2 text-sm text-slate-600">Zlínský kraj. Recyklovatelné obaly a rozumná logistika. Minimum odpadu, maximum užitku.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produkty -->
+    <section id="produkty" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Produkty VERMI</h2>
+          <a href="#kontakt" class="text-vermi-700 hover:underline">Chci poptávku →</a>
+        </div>
+
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
+            <img src="https://images.unsplash.com/photo-1621269289535-2bd3695df291?auto=format&fit=crop&w=1200&q=80" alt="Vermikompost – prosátý substrát" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" decoding="async" />
+            <h3 class="mt-4 text-lg font-bold">Vermikompost (prosátý)</h3>
+            <p class="text-sm text-slate-600 mt-1">Prémiový žížalí kompost. Zvyšuje biologickou aktivitu půdy a dostupnost živin.</p>
+            <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
+              <div><dt class="text-slate-500">Balení</dt><dd class="font-medium">5 / 15 / 25 kg</dd></div>
+              <div><dt class="text-slate-500">Původ</dt><dd class="font-medium">CZ farma</dd></div>
+            </dl>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="text-soil-600 font-bold">od 149 Kč</div>
+              <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
             </div>
-            <div>
-              <label for="email" class="block text-sm font-medium">E-mail</label>
-              <input id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" required />
+          </article>
+
+          <!-- Card 2 -->
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
+            <img src="https://images.unsplash.com/photo-1615485737651-6fcf3b3457cf?auto=format&fit=crop&w=1200&q=80" alt="Vermikompostér – domácí kompostování" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" decoding="async" />
+            <h3 class="mt-4 text-lg font-bold">Vermikompostér (set)</h3>
+            <p class="text-sm text-slate-600 mt-1">Domácí bez-zápachové kompostování s kompletním startem (box + žížaly + návod).</p>
+            <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
+              <div><dt class="text-slate-500">Objem</dt><dd class="font-medium">40 / 60 l</dd></div>
+              <div><dt class="text-slate-500">Záruka</dt><dd class="font-medium">24 měsíců</dd></div>
+            </dl>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="text-soil-600 font-bold">od 1 990 Kč</div>
+              <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
             </div>
-            <div class="sm:col-span-2">
-              <label for="produkt" class="block text-sm font-medium">Co poptáváte</label>
-              <select id="produkt" name="produkt" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400">
-                <option>Vermikompost</option>
-                <option>Vermivýluh</option>
-                <option>Vermikompostér (set)</option>
-                <option>Jiné / poradna</option>
-              </select>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft flex flex-col">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80" alt="Vermivýluh – tekuté hnojivo" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" decoding="async" />
+            <h3 class="mt-4 text-lg font-bold">Vermivýluh (tekuté hnojivo)</h3>
+            <p class="text-sm text-slate-600 mt-1">Koncentrovaný výluh z vermikompostu. Pro pokojovky, zahrady i skleníky.</p>
+            <dl class="grid grid-cols-2 gap-2 text-sm mt-4">
+              <div><dt class="text-slate-500">Ředění</dt><dd class="font-medium">1 : 10 – 1 : 20</dd></div>
+              <div><dt class="text-slate-500">Skladování</dt><dd class="font-medium">chladem 3–6 měs.</dd></div>
+            </dl>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="text-soil-600 font-bold">od 119 Kč / 0,5 l</div>
+              <a href="#kontakt" class="inline-flex items-center gap-2 rounded-lg bg-vermi-600 text-white px-4 py-2 text-sm font-medium hover:bg-vermi-700">Poptat</a>
             </div>
-            <div class="sm:col-span-2">
-              <label for="msg" class="block text-sm font-medium">Zpráva</label>
-              <textarea id="msg" name="msg" rows="5" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" placeholder="Množství, balení, termín…"></textarea>
+          </article>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-soft flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="text-lg font-bold">Nevíš, co je pro tebe nejlepší?</div>
+            <div class="text-sm text-slate-600">Napiš, co pěstuješ a v jakých podmínkách – doporučíme dávkování i produkt.</div>
+          </div>
+          <a href="#kontakt" class="inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium hover:bg-vermi-700">Poradit výběr</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak to funguje -->
+    <section id="jak-to-funguje" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Jak to funguje</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 p-6">
+            <div class="text-vermi-600 font-bold">1</div>
+            <h3 class="mt-1 font-bold">Bioodpad → box</h3>
+            <p class="text-sm text-slate-600 mt-1">Zbytky ovoce, zeleniny, kávová sedlina, papírové utěrky. Bez masa a mléka.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 p-6">
+            <div class="text-vermi-600 font-bold">2</div>
+            <h3 class="mt-1 font-bold">Žížaly pracují</h3>
+            <p class="text-sm text-slate-600 mt-1">Kalifornské žížaly materiál rozloží na bohatý vermikompost a výluh.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 p-6">
+            <div class="text-vermi-600 font-bold">3</div>
+            <h3 class="mt-1 font-bold">Hnojivo pro rostliny</h3>
+            <p class="text-sm text-slate-600 mt-1">Přidejte do substrátu nebo zalijte ředěným výluhem – rostliny viditelně ožijí.</p>
+          </div>
+        </div>
+        <div class="mt-6 text-sm text-slate-600">Tip: Správně provozovaný vermikompostér <strong>nezapáchá</strong> a zabere minimum místa.</div>
+      </div>
+    </section>
+
+    <!-- Farma -->
+    <section id="farma" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Naše vermifarma</h2>
+            <p class="mt-3 text-slate-600">Chováme vlastní populaci kalifornských žížal a dbáme na čistotu vstupních surovin. Každá šarže prochází kontrolou kvality a proséváním.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700">
+              <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Lokální suroviny, nulové plýtvání.</li>
+              <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Stálá vlhkost, optimální teplota, řízené podmínky.</li>
+              <li class="flex items-start gap-2"><span class="h-1.5 w-1.5 rounded-full bg-vermi-600 mt-2"></span> Balíme do recyklovatelných obalů.</li>
+            </ul>
+            <a href="#kontakt" class="mt-6 inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700">Domluvit odběr</a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1598425237652-4d9bc8e1375f?auto=format&fit=crop&w=1200&q=80" alt="Žížalí farma – detail" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1485637701897-1c03a7529d17?auto=format&fit=crop&w=1200&q=80" alt="Prosévání vermikompostu" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?auto=format&fit=crop&w=1200&q=80" alt="Bohatá, kyprá půda" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1621269289535-2bd3695df291?auto=format&fit=crop&w=1200&q=80" alt="Domácí vermikompostér" class="rounded-xl object-cover h-48 sm:h-64" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pro koho -->
+    <section id="pro-koho" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Pro koho je VERMI</h2>
+          <a href="#kontakt" class="text-vermi-700 hover:underline">Napište nám →</a>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="font-bold">Domácnosti</div>
+            <p class="mt-2 text-sm text-slate-600">Balkony, pokojovky, zahrady. Vermikompostér bez zápachu i do bytu.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="font-bold">Školy a projekty</div>
+            <p class="mt-2 text-sm text-slate-600">Edukační sety, metodika a podpora. Skvělé pro eko výchovu.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="font-bold">Zahradnictví a obce</div>
+            <p class="mt-2 text-sm text-slate-600">Pravidelný odběr, větší balení, domluva logistiky podle sezóny.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Magazín / Blog -->
+    <section id="blog" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Magazín VERMI</h2>
+          <a href="#" class="text-vermi-700 hover:underline">Všechny články →</a>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
+            <img src="https://images.unsplash.com/photo-1595254175031-3b28418a3b01?auto=format&fit=crop&w=1200&q=80" alt="Jak založit vermikompostér" class="aspect-[16/9] object-cover" loading="lazy" decoding="async">
+            <div class="p-5">
+              <h3 class="font-bold">Jak založit vermikompostér za víkend</h3>
+              <p class="text-sm text-slate-600 mt-1">Krok za krokem: od volby boxu po první sklizeň vermikompostu.</p>
+              <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
+            </div>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
+            <img src="https://images.unsplash.com/photo-1472148083604-64f1084980b8?auto=format&fit=crop&w=1200&q=80" alt="Vermivýluh" class="aspect-[16/9] object-cover" loading="lazy" decoding="async">
+            <div class="p-5">
+              <h3 class="font-bold">Vermivýluh: kdy a jak ředit</h3>
+              <p class="text-sm text-slate-600 mt-1">Dávkování pro pokojovky, bylinky i ovocné keře – bez rizika spálení.</p>
+              <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
+            </div>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-soft">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80" alt="Půdní život" class="aspect-[16/9] object-cover" loading="lazy" decoding="async">
+            <div class="p-5">
+              <h3 class="font-bold">Živá půda: proč je humus základ</h3>
+              <p class="text-sm text-slate-600 mt-1">Co dělá půdu zdravou a jak jí pomoci bez chemie.</p>
+              <a href="#" class="mt-3 inline-block text-vermi-700 hover:underline text-sm">Číst dál</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Časté dotazy</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="font-semibold cursor-pointer">Zápach a mušky – jak tomu předejít?</summary>
+            <p class="mt-3 text-sm text-slate-600">Správně vyvážený poměr vlhkosti a uhlíkatého materiálu (např. karton) eliminuje zápach i mušky. Zakrývejte vrstvou papíru.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="font-semibold cursor-pointer">Co do vermikompostéru nepatří?</summary>
+            <p class="mt-3 text-sm text-slate-600">Maso, mléčné výrobky, oleje, citrusy ve velkém množství a cokoliv plesnivého.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="font-semibold cursor-pointer">Jak dlouho trvá první sklizeň?</summary>
+            <p class="mt-3 text-sm text-slate-600">Obvykle 8–12 týdnů podle teploty a množství vstupního materiálu.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="font-semibold cursor-pointer">Je vermikompost vhodný pro všechny rostliny?</summary>
+            <p class="mt-3 text-sm text-slate-600">Ano, ale u kyselomilných rostlin dávkujte s citem. Výluh vždy řeďte.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Kontakt & poptávka</h2>
+            <p class="mt-3 text-slate-600">Napište nám, co potřebujete – ozveme se s dostupností a cenou. Možný je i pravidelný odběr pro zahradnictví a obce.</p>
+
+            <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
+              <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+                <div class="font-semibold">E-mail</div>
+                <a href="mailto:info@vermi.cz" class="text-vermi-700">info@vermi.cz</a>
+              </div>
+              <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+                <div class="font-semibold">Telefon</div>
+                <a href="tel:+420000000000" class="text-vermi-700">+420 000 000 000</a>
+              </div>
+              <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+                <div class="font-semibold">Odběrné místo</div>
+                <div class="text-slate-700">Uherské Hradiště / Zlínský kraj</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+                <div class="font-semibold">IČ / Fakturace</div>
+                <div class="text-slate-700">Na vyžádání</div>
+              </div>
             </div>
           </div>
-          <button type="submit" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700">Odeslat poptávku</button>
-          <p class="mt-2 text-xs text-slate-500">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</p>
-        </form>
+
+          <!-- FORM: připravené na endpoint (dočasně funguje jako demo) -->
+          <form id="leadForm" class="rounded-2xl border border-slate-200 p-6 bg-white shadow-soft" action="#" method="post" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium">Jméno</label>
+                <input id="name" name="name" type="text" autocomplete="name" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" required />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" required />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="produkt" class="block text-sm font-medium">Co poptáváte</label>
+                <select id="produkt" name="produkt" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400">
+                  <option>Vermikompost</option>
+                  <option>Vermivýluh</option>
+                  <option>Vermikompostér (set)</option>
+                  <option>Jiné / poradna</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="msg" class="block text-sm font-medium">Zpráva</label>
+                <textarea id="msg" name="msg" rows="5" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-vermi-400" placeholder="Množství, balení, termín…"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-vermi-600 text-white px-5 py-3 font-medium shadow-soft hover:bg-vermi-700">Odeslat poptávku</button>
+            <p class="mt-2 text-xs text-slate-500">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</p>
+            <p id="formStatus" class="mt-3 text-sm hidden"></p>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-10">
+  <footer class="py-10 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
         <p class="text-sm text-slate-600">© <span id="year"></span> VERMI.cz – Živá půda. Všechna práva vyhrazena.</p>
-        <nav class="flex flex-wrap gap-4 text-sm text-slate-600">
+        <nav class="flex flex-wrap gap-4 text-sm text-slate-600" aria-label="Patička">
           <a href="#faq" class="hover:underline">FAQ</a>
           <a href="#" class="hover:underline">Obchodní podmínky</a>
           <a href="#" class="hover:underline">Ochrana osobních údajů</a>
@@ -373,27 +463,75 @@
     </div>
   </footer>
 
-  <!-- JSON-LD Schema (Organization basic) -->
+  <!-- JSON-LD Schema: LocalBusiness + FAQ -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "VERMI.cz",
-      "url": "https://www.vermi.cz",
-      "logo": "https://images.unsplash.com/photo-1526401281623-2a83f7c0f4a1?q=80&w=512&auto=format&fit=crop",
-      "sameAs": []
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "VERMI.cz",
+        "url": "https://www.vermi.cz/",
+        "email": "info@vermi.cz",
+        "areaServed": "CZ",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CZ",
+          "addressRegion": "Zlínský kraj",
+          "addressLocality": "Uherské Hradiště"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Zápach a mušky – jak tomu předejít?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Správně vyvážený poměr vlhkosti a uhlíkatého materiálu (např. karton) eliminuje zápach i mušky. Zakrývejte vrstvou papíru."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Co do vermikompostéru nepatří?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Maso, mléčné výrobky, oleje, citrusy ve velkém množství a cokoliv plesnivého."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak dlouho trvá první sklizeň?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Obvykle 8–12 týdnů podle teploty a množství vstupního materiálu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Je vermikompost vhodný pro všechny rostliny?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ano, ale u kyselomilných rostlin dávkujte s citem. Výluh vždy řeďte."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 
   <!-- Interactivity -->
   <script>
-    // Year in footer
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle + auto-close on link click + close on scroll
+    // Mobile menu toggle + auto-close
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const links = mobileMenu.querySelectorAll('a');
+
     function toggleMenu(forceState) {
       const isHidden = mobileMenu.classList.contains('hidden');
       const open = (forceState !== undefined) ? forceState : isHidden;
@@ -405,8 +543,10 @@
         menuBtn.setAttribute('aria-expanded', 'false');
       }
     }
+
     menuBtn.addEventListener('click', () => toggleMenu());
     links.forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
     let lastY = window.scrollY;
     window.addEventListener('scroll', () => {
       if (!mobileMenu.classList.contains('hidden')) {
@@ -414,6 +554,34 @@
         if (Math.abs(now - lastY) > 10) toggleMenu(false);
         lastY = now;
       }
+    });
+
+    // Form: demo submit (připravené na endpoint)
+    const form = document.getElementById('leadForm');
+    const statusEl = document.getElementById('formStatus');
+
+    function setStatus(msg, type) {
+      statusEl.textContent = msg;
+      statusEl.classList.remove('hidden');
+      statusEl.classList.remove('text-green-700','text-red-700','text-slate-600');
+      statusEl.classList.add(type === 'ok' ? 'text-green-700' : type === 'err' ? 'text-red-700' : 'text-slate-600');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const name = (fd.get('name') || '').toString().trim();
+      const email = (fd.get('email') || '').toString().trim();
+      if (!name || !email) {
+        setStatus('Doplňte prosím jméno a e-mail.', 'err');
+        return;
+      }
+
+      // TODO: Sem doplníš reálný endpoint (např. /api/lead) nebo Netlify Forms.
+      // Teď jen demo:
+      setStatus('Díky! Poptávka byla odeslána (demo). Brzy se ozveme.', 'ok');
+      form.reset();
     });
   </script>
 </body>
